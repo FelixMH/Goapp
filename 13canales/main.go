@@ -15,10 +15,11 @@ func main() {
 
 	bodegaDestino := []string{}
 
+	// Canales de go creados sin datos....
 	fotocopiadora := make(chan string)
 	fotocopia := make(chan string)
 
-	// se deja en la bodega de destino
+	// se deja en la bodega de destino con una gorutina
 	go func() {
 		for _, libro := range bodegaOrigen {
 			fotocopiadora <- libro
